@@ -17,7 +17,7 @@
                             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                                     <div class="p-6 bg-white border-b border-black-200">
-                                        <div class='post'>
+                                        <div class='consideration_post'>
                                             <div style="background: gray; border: 1px solid silver; padding-left: 10px;"> 
                                                 <span style="color: black; font-size:24px">
                                                     <a href="/considerations/{{ $consideration->id }}">{{ $consideration->title }}</a>
