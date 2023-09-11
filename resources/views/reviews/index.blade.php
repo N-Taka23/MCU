@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Review</title>
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/star_rate.css') }}">
     </head>
     <x-app-layout>
         <body>
@@ -20,14 +20,21 @@
                                     <div class='review_post'>
                                         <div style="background: gray; border: 1px solid silver; padding-left: 10px;"> 
                                             <span style="color: black; font-size:24px">
+                                                
                                                 <a href="/reviews/{{ $review->id }}">{{ $review->movie->name }}</a>
-                                                <p class='movie_evaluation'>{{$review->movie_evaluation}}</p>
+                                                <p>
+                                                <span class="star-rating" data-rate={{$review->movie_evaluation}}></span>
+                                                {{$review->movie_evaluation}}
+                                                </p>
                                             </span>
                                         </div> 
                                         <div style="border: 1px solid silver; font-size: 100%; padding: 20px;">
                                             <p class='body'>{{ $review->comment }}</p>
+                                            <p style="text-align:right">by : {{$review->user->name}}</p>
                                         </div>
-                                        <p class='evaluation'>good : {{$review->review_evaluation}}</p>
+                                        <div style="border: 1px solid silver; font-size: 100%; padding: 5px;">
+                                            <p class='evaluation'>good : {{$review->review_evaluation}}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

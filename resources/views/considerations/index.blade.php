@@ -25,8 +25,11 @@
                                             </div> 
                                             <div style="border: 1px solid silver; font-size: 100%; padding: 20px;">
                                                 <p class='body'>{{ $consideration->comment }}</p>
+                                                <p style="text-align:right">by : {{$consideration->user->name}}</p>
                                             </div>
-                                            <p class='evaluation'>good : {{$consideration->consideration_evaluation}}</p>
+                                            <div style="border: 1px solid silver; font-size: 100%; padding: 5px;">
+                                                <p class='evaluation'>good : {{$consideration->consideration_evaluation}}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

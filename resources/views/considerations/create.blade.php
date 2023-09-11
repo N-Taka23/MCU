@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Consideration</title>
     </head>
+    <x-app-layout>
     <body>
         <h1></h1>
         <form action="/considerations" method="POST">
@@ -18,7 +19,9 @@
             </div>
             <input type="submit" value="store"/>
         </form>
-        <div class="footer">
+        <div class="footer" style= "text-decoration:underline; color:blue;">
             <a href="/">戻る</a>
         </div>
     </body>
+    </x-app-layout>
+</html>
