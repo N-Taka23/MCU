@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Considerations</title>
+        <title>Reviews</title>
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/star_rate.css') }}">
     </head>
     <x-app-layout>
         <body>
@@ -13,18 +13,24 @@
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div style="background: gray; border: 1px solid silver; padding-left: 10px;"> 
                         <span style="color: black; font-size:24px">
-                            {{ $consideration->title }}
+                            {{ $review->movie->name }}
+                            <p>
+                            <span class="star-rating" data-rate={{$review->movie_evaluation}}></span>
+                            {{$review->movie_evaluation}}
+                            </p>
                         </span>
                     </div> 
                     <div style="border: 1px solid silver; font-size: 100%; padding: 20px;">
-                        <p class='body'>{{ $consideration->comment }}</p>
-                        <p style="text-align:right">by : {{$consideration->user->name}}</p>
+                        <p class='body'>{{ $review->comment }}</p>
+                        <p style="text-align:right">by : {{$review->user->name}}</p>
                     </div>
                     <div style="border: 1px solid silver; font-size: 100%; padding: 5px;">
-                        <p class='evaluation'>good : {{$consideration->consideration_evaluation}}</p>
+                        <p class='evaluation'>good : {{$review->review_evaluation}}</p>
                     </div>
+                    
+                    
                     <div class="footer" style= "text-decoration:underline; color:blue;">
-                        <a href="/considerations">back</a>
+                        <a href="/reviews">back</a>
                     </div>
                 </div>
             </div>

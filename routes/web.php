@@ -26,7 +26,9 @@ Route::get('/considerations', [ConsiderationController::class, 'index'])->name('
 Route::get('/considerations/create', [ConsiderationController::class, 'create']);
 Route::get('/considerations/{consideration}', [ConsiderationController::class, 'show']);
 Route::get('/reviews/create', [ReviewController::class, 'create']);
+Route::get('/reviews/{review}', [ReviewController::class, 'show']);
 Route::post('/considerations', [ConsiderationController::class, 'store']);
+Route::post('/reviews', [ReviewController::class, 'store']);
 Route::get('/users/{user}', [UserController::class ,'index'])->name('user');
 Route::get('/movies/{movie}', [MovieController::class ,'index']);
 
