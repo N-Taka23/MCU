@@ -15,7 +15,7 @@
 
     <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
         @csrf
-        @method('patch')
+        
 
         <div>
             <x-input-label for="name" :value="__('Name')" />
@@ -45,6 +45,29 @@
                     @endif
                 </div>
             @endif
+        </div>
+        
+        <div>
+            <h2>Favorite Character</h2>
+            <input type='text' name="favorite_character" value="{{$user->favorite_character??''}}">
+        </div>
+        
+        <div>
+            <h2>Favorite Movie<h2>
+            <select name="movie_id">
+                
+                @foreach($movies as $movie)
+                    <option value="{{ $movie->id }}"
+                    @if($user->movie_id == $movie->id)
+                        selected
+                    @endif>{{ $movie->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        
+        <div class="comment">
+                <h2>コメント</h2>
+                <textarea name="comment" cols='50'>{{$user->comment??''}}</textarea>
         </div>
 
         <div class="flex items-center gap-4">

@@ -21,6 +21,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'favorite_character',
+        'movie_id',
+        'comment',
     ];
 
     /**
