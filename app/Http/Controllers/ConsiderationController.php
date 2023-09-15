@@ -19,20 +19,23 @@ class ConsiderationController extends Controller
     public function store(Request $request, Consideration $consideration)
     {
         
-        $id = Auth::id();
-        //$input = ['user_id'=>$id,'title'=>$request->title, 'parent_id'=>0,'child_id'=>0,'comment'=>$request->comment ,'consideration_evaluation'=>0]; 
+        $user_id = Auth::id();
         $input = $request['consideration'];
         $consideration->title = $input['title'];
         $consideration->comment = $input['comment'];
-        $consideration->user_id = $id;
-        $consideration->parent_id = 0;
-        $consideration->child_id = 0;
+        $consideration->user_id = $user_id;
+        $consideration->parent_id = $request->input('parent_id');
+        $consideration->child = 0;
         $consideration->consideration_evaluation = 0;
         $consideration->save();
+
         return redirect('/considerations/');
     }
-    public function show(Consideration $consideration)
+    public function show($id)
     {
-        return view('considerations.show')->with(['consideration' => $consideration]);
+        $consideration = Consideration::find($id);
+        $replies = Consideration::where('parent_id', $id)->get();
+        
+        return view('considerations.show')->with(compact('consideration','replies'));
     }
 }

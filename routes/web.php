@@ -24,7 +24,7 @@ Route::get('/', function () { return view('welcome');});
 Route::get('/reviews', [ReviewController::class, 'index'])->name('review');
 Route::get('/considerations', [ConsiderationController::class, 'index'])->name('consideration');
 Route::get('/considerations/create', [ConsiderationController::class, 'create']);
-Route::get('/considerations/{consideration}', [ConsiderationController::class, 'show']);
+Route::get('/considerations/{id}', [ConsiderationController::class, 'show']);
 Route::get('/reviews/create', [ReviewController::class, 'create']);
 Route::get('/reviews/{review}', [ReviewController::class, 'show']);
 Route::post('/considerations', [ConsiderationController::class, 'store']);

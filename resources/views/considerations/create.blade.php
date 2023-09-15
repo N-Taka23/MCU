@@ -17,6 +17,7 @@
                 <h2>Comment</h2>
                 <textarea name="consideration[comment]" placeholder="今日も1日お疲れさまでした。"></textarea>
             </div>
+            <input type='hidden' name='parent_id' value='0'>
             <input type="submit" value="store"/>
         </form>
         <div class="footer" style= "text-decoration:underline; color:blue;">
