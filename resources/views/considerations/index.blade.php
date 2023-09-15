@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <title>Consideration</title>
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="{{ asset('css/post_evaluation_reply.css') }}"rel="stylesheet">
     </head>
     <x-app-layout>
             <body>
-                <div class="create" style= "text-decoration:underline; color:blue;">
-                    <a href="/considerations/create">create</a>
+                <div class="create lg:px-8" style= "text-decoration:underline; color:blue;">
+                    <a href="/considerations/create">考察を投稿する</a>
                 </div>
                 <div class='considerations'>
                     @foreach ($considerations as $consideration)
@@ -28,7 +28,11 @@
                                                 <p style="text-align:right">by : {{$consideration->user->name}}</p>
                                             </div>
                                             <div style="border: 1px solid silver; font-size: 100%; padding: 5px;">
-                                                <p class='evaluation'>good : {{$consideration->consideration_evaluation}}</p>
+                                                <p class = 'evaluation'>いいね : {{$consideration->consideration_evaluation}} ｜コメント : {{$consideration->child}}</span>
+                                                <div class='reply_bottun' style= "text-decoration:underline; color:blue;">
+                                                    <a href="considerations/{{$consideration->id}}">返信する</a>
+                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>

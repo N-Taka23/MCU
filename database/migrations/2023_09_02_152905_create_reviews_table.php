@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('movie_id')->constrained();
             $table->integer('parent_id');
-            $table->integer('child_id');
+            $table->integer('child');
             $table->string('comment',300);
             $table->double('movie_evaluation',2,1);
             $table->integer('review_evaluation');
